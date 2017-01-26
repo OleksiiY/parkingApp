@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='myApp'>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link href="css/animate.css" rel="stylesheet" media="screen">
+  <link rel="stylesheet" href="css/styles.css" />
+  <title>Parking App</title>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <nav class="navbar navbar-inverse" role="navigation">
+        <div class="navbar-header">
+          <button type="button" id="nav-toggle" class="navbar-toggle" data-toggle="collapse" data-target="#main-nav"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+          <a href="#" class="navbar-brand scroll-top logo  animated bounceInLeft"><b><i>Parking App</i></b></a> </div>
+
+        <div id="main-nav" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav" id="mainNav">
+            <li id="firstLink"><a href="#home" class="scroll-link">Home</a></li>
+            <li><a ui-sref="info" class="scroll-link" ui-sref='info'>Info</a></li>
+            <li><a ui-sref="allInvoices" class="scroll-link">View all Invoices</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <div class="mainLogo">
+    <div class="container">
+        <div class="col-md-4">
+            <img src="images/parking.png" class='responsive' alt="">
+        </div>
+        <div class="col-md-4">
+          <img src="images/logo2.jpeg" class='responsive' alt="">
+        </div>
+        <div class="col-md-4">
+          <img src="images/logo3.jpeg" class='responsive' alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+
+  <!-- Ui-Router -->
+<ui-view></ui-view>
+<div>
+  <h1 style='color:#fff'>.</h1>
+</div>
+  <section class="copyright">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12 text-center"> Copyright 2017 | All Rights Reserved</div>
+      </div>
+    </div>
+  </section>
+
+
+
+<!--Libaries  -->
+<script src='bower_components/jquery/dist/jquery.js'></script>
+<script src='bower_components/bootstrap/dist/js/bootstrap.min.js'></script>
+<script src='bower_components/angular/angular.min.js'></script>
+<script src='bower_components/angular-ui-router/release/angular-ui-router.min.js'></script>
+<!-- Artefacts -->
+<script src='src/module.js'></script>
+<script src='src/controllers/regularController.js'></script>
+<script src='src/moduleService.js'></script>
+<script src='src/controllers/allInvoicesController.js'></script>
+<script src='src/controllers/viewController.js'></script>
+<script src='src/controllers/premiumController.js'></script>
+
+</body>
+</html>

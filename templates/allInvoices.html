@@ -1,0 +1,21 @@
+<h1>Invoices Page</h1>
+<div class="container" ng-controller='allInvoicesController'>
+<ul class='allInvoicesList'>
+  <li>
+    <strong style='font-weight:800;'>Invoice Number | Client | Email | Month | Account | Total Bill (EUR)</strong>
+  </li>
+  <li ng-repeat='item in invoices'>
+    <button class="btn btn-danger btn-xs" ng-click='remove($index)'>Remove</button>
+    <button class="btn btn-primary btn-xs" ng-click='view($index)' ui-sref='view'>View Details</button>
+    <ul>
+      <li ng-repeat='unit in item.clients'>
+        <strong>{{unit.invoiceNum}} | {{unit.client}} | {{unit.email}} | {{unit.month}} | {{unit.type}} | {{unit.total}}
+
+        </strong>
+      </li>
+    </ul>
+  </li>
+</ul>
+<br><br>
+<button class="btn btn-success btn-lg" ui-sref='home'>Back to Home Page</button>
+</div>

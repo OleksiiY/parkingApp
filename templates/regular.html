@@ -1,0 +1,90 @@
+<div class="container" ng-click='regularController'>
+  <h1>regular page</h1>
+<!--Client Part  -->
+<form action="">
+  <div class="row">
+    <div class="col-xs-3">
+      <label>Invoice Number
+        <input type="text" class="form-control" ng-model="invoiceNumberRegular">
+      </label>
+    </div>
+    <div class="col-xs-3">
+      <label>Client
+        <input type="text" class="form-control" ng-model="clientRegular">
+      </label>
+    </div>
+    <div class="col-xs-3">
+      <label>Email
+        <input type="email" class="form-control" ng-model="emailRegular">
+      </label>
+    </div>
+    <div class="col-xs-3">
+      <label>Month
+        <input type="text" class="form-control" ng-model="monthRegular">
+      </label>
+    </div>
+  </div>
+</form>
+
+
+
+<!--End of Client part  -->
+<!-- Knopka -->
+<div class="text-center">
+  <button class="btn btn-primary btn-lg" ng-click='saveRegularClient()'>Add Reciept</button>
+</div>
+
+<!--Invoices part  -->
+<div class="reciept" ng-show='showForm'>
+  <select name="" id="" ng-model="selected_condition" ng-options='item.type for item in condition'>
+    <option value="">Select Condition</option>
+  </select>
+
+  <br><br>
+
+  <div class="row">
+    <div class="col-xs-2"><h5><strong> Time Park In(HH:MM)</strong></h5></div>
+    <div class="col-xs-1">
+      <input type="text" class="form-control" ng-model='hoursParkInRegular' maxlength="2">
+    </div>
+    <div class="col-xs-1">
+      <input type="text" class="form-control" ng-model='minutesParkInRegular' maxlength="2">
+    </div>
+    <div class="col-xs-2"><h5><strong> Stay Duration(HH:MM)</strong></h5></div>
+    <div class="col-xs-1">
+      <input type="text" class="form-control" ng-model='stayHoursRegular' maxlength="2">
+    </div>
+    <div class="col-xs-1">
+      <input type="text" class="form-control" ng-model='stayMinutesRegular' maxlength="2">
+    </div>
+  
+
+  </div>
+  <br><br>
+  <div class="text-center">
+    <button class="btn btn-success btn-lg" ng-click="generateRegularReciept()">Generate Reciept</button>
+  </div><br><br><br>
+
+<!--End of Invoices part  -->
+<!-- Table invoices Part -->
+  <table class="table table-bordered">
+    <tr>
+      <th>Duration(Minutes)</th>
+      <th>Day Time</th>
+      <th>Price(EUR)</th>
+    </tr>
+    <tr ng-repeat='item in displayReciepts'>
+      <td>{{item.duration}}</td>
+      <td>{{item.dayTime}}</td>
+      <td>{{item.price}}</td>
+    </tr>
+    <tr>
+      <td>Total Price(EUR):  <strong>{{totalPriceRegular}}</strong></td>
+    </tr>
+  </table>
+  <br><br>
+  <h3 ng-show='regularData'><span style='color:green;'>Your Data Has Been Saved</span>,all Invoices can be checked in <strong>View All Invoices</strong> section</h3>
+  <button class="btn btn-success btn-lg" ng-click=saveInvoice()>Save Invoice</button>
+  <button class="btn btn-success btn-lg" ui-sref='home'>Go To Home Page</button>
+<!-- End of tables invoices Part -->
+</div>
